@@ -18,7 +18,7 @@
 <body>
 
   <!-- Start Logo-bar -->
-  <div class="logo-bar">
+  <!-- <div class="logo-bar">
     <div class="container">
       <div class="row">
         <div class="col-2">
@@ -41,17 +41,18 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <!-- End logo-bar -->
 
   <!-- Start Navbar -->
   <nav class="navbar navbar-expand-custom navbar-mainbg">
     <div class="container">
-      <div class="m-auto">
-        <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <i class="fas fa-bars text-white"></i>
-        </button>
-      </div>
+      <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars text-white"></i>
+      </button>
+      <a class="navbar-brand navbar-logo" href="#"> 
+        <img class="logo-img" src="./assets/img/logo.PNG" alt="Logo" width="30" height="30"> 
+      </a>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
           <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
@@ -78,60 +79,76 @@
           </li>
         </ul>
       </div>
+      <div class="dropdown-div d-flex align-items-center">
+        <button class="btn btn-select-vehicle position-relative"> Select Vehicle &dtrif; 
+          <ul class="dropdown">
+            <li><a href="#"> Year </a></li>
+            <li><a href="#"> Make </a></li>
+            <li><a href="#"> Modal </a></li>
+          </ul>
+        </button>
+      </div>
     </div>
   </nav>
   <!-- End navbar -->
 
   <!-- Start Video Div 1 -->
-  <div class="container video-container section-background parallax1" id="home-video"></div>
-  <h1 class="text-primary text-center"> 
-    Size of Wheels: 
-    <select class="form-control w-50 mx-auto">
-      <option> Wheel Size 1 </option>
-      <option> Wheel Size 2 </option>
-      <option> Wheel Size 3 </option>
-    </select>
-  </h1>
+  <div class="video-container section-background parallax1" id="home-video">
+    <div class="px-2">
+      <h1 class="text-center"> 
+        Size of Wheels:         
+      </h1>
+      <span class="dropdown-el">
+        <input type="radio" name="sortType" value="Relevance" checked="checked" id="sort-relevance"><label for="sort-relevance"> - Select Size -</label>
+        <input type="radio" name="sortType" value="Popularity" id="sort-best"><label for="sort-best"> Wheel Size 1 </label>
+        <input type="radio" name="sortType" value="PriceIncreasing" id="sort-low"><label for="sort-low"> Wheel Size 2 </label>
+        <input type="radio" name="sortType" value="PriceDecreasing" id="sort-high"><label for="sort-high"> Wheel Size 3 </label>
+      </span>
+    </div>
+  </div>
   <!-- End Video Div 1 -->
 
   <!-- Start Video Div 2 -->
-  <div class="container video-container section-background parallax2" id=""></div>
-  <h1 class="text-primary text-center"> 
-    Please select the width: 
-    <select class="form-control w-50 mx-auto mb-2">
-      <option> Width 1 </option>
-      <option> Width 2 </option>
-      <option> Width 3 </option>
-    </select>
-    Please select the diameter: 
-    <select class="form-control w-50 mx-auto">
-      <option> Diameter 1 </option>
-      <option> Diameter 2 </option>
-      <option> Diameter 3 </option>
-    </select>
-  </h1>
+  <div class="video-container section-background parallax2" id="">
+    <div class="px-2">
+      <h1 class="text-center"> 
+        Size of Diameter:         
+      </h1>
+      <span class="dropdown-el">
+        <input type="radio" name="sortType1" value="Relevance1" checked="checked" id="sort-relevance1"><label for="sort-relevance1"> - Select Size -</label>
+        <input type="radio" name="sortType1" value="Popularity1" id="sort-best1"><label for="sort-best1"> Diameter 1 </label>
+        <input type="radio" name="sortType1" value="PriceIncreasing1" id="sort-low1"><label for="sort-low1"> Diameter 2 </label>
+        <input type="radio" name="sortType1" value="PriceDecreasing1" id="sort-high1"><label for="sort-high1"> Diameter 3 </label>
+      </span>
+    </div>
+  </div>
   <!-- End Video Div 2 -->
 
   <!-- Start Video Div 3 -->
-  <div class="container video-container section-background parallax3" id="gallery-video"></div>
-  <h1 class="text-primary text-center"> 
-    Gallery Section:
-    <p class="container" style="font-size: 25px;">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis minima fuga debitis quasi eius aliquid sapiente? Cumque blanditiis quibusdam, ex totam aliquam provident alias culpa, sit illo, eum doloribus doloremque. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-    </p>
-  </h1>
+  <div class="video-container section-background parallax3" id="gallery-video">
+    <h1 class="text-center"> 
+      Gallery Section:
+      <p class="container" style="font-size: 25px;">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis minima fuga debitis quasi eius aliquid sapiente? Cumque blanditiis quibusdam, ex totam aliquam provident alias culpa, sit illo, eum doloribus doloremque. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      </p>
+    </h1>
+  </div>
   <!-- End Video Div 3 -->
 
   <!-- Start Video Div 4 -->
-  <div class="container video-container section-background parallax4" id="wheels-video"></div>
-  <h1 class="text-primary text-center"> 
-    Wheels Video: 
-    <select class="form-control w-50 mx-auto">
-      <option> Wheels Video 1 </option>
-      <option> Wheels Video 2 </option>
-      <option> Wheels Video 3 </option>
-    </select>
-  </h1>
+  <div class="video-container section-background parallax4" id="wheels-video">
+    <div class="px-2">
+      <h1 class="text-center"> 
+        Size of Wheels:         
+      </h1>
+      <span class="dropdown-el">
+        <input type="radio" name="sortType2" value="Relevance2" checked="checked" id="sort-relevance2"><label for="sort-relevance2"> - Select Size -</label>
+        <input type="radio" name="sortType2" value="Popularity2" id="sort-best2"><label for="sort-best2"> Wheel Size 1 </label>
+        <input type="radio" name="sortType2" value="PriceIncreasing2" id="sort-low2"><label for="sort-low2"> Wheel Size 2 </label>
+        <input type="radio" name="sortType2" value="PriceDecreasing2" id="sort-high2"><label for="sort-high2"> Wheel Size 3 </label>
+      </span>
+    </div>
+  </div>
   <!-- End Video Div 4 -->
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

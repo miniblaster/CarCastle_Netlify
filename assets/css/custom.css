@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
 	font-family: 'Roboto', sans-serif;
 }
@@ -89,6 +93,14 @@ ul.dropdown {
 
 
 /*----------bootstrap-navbar-css------------*/
+
+.navbar {
+	position: fixed;
+	width: 100%;
+	z-index: 2000;
+	box-shadow: 5px 5px 5px grey;
+	border-bottom: 1px solid white;
+}
 
 .navbar-logo{
 	padding: 15px;
@@ -212,16 +224,18 @@ ul.dropdown {
 
 /* Start Video Associate */
 
-.section-background + h1 {
-	/* position: absolute; */
-	z-index: 10;
-	left: 25%;
-	top: 40%;
+.section-background h1 {
+	font-size: 50px;
 	font-weight: 800;
-	background-color: #de4156 !important;
-	color: #fff !important;
-	padding-top: 20px;
-	padding-bottom: 20px;
+	color: white !important;
+	text-shadow: 1px 1px 2px black, 0 0 0.2em lightblue, 0 0 0.2em blue;
+}
+
+.section-background div {
+	margin: auto;
+	z-index: 10;
+	overflow: hidden;
+	/* max-height: 220px; */
 }
 
 /* End Video Associate */
@@ -229,7 +243,7 @@ ul.dropdown {
 
 /* RWD - Responsive Web Design */
 
-@media(min-width: 992px){
+@media(min-width: 1200px){
 	.navbar-expand-custom {
 	    -ms-flex-flow: row nowrap;
 	    flex-flow: row nowrap;
@@ -252,10 +266,13 @@ ul.dropdown {
 	}
 }
 
-@media (max-width: 991px){
+@media (max-width: 1199px){
   .navbar .container {
     width: 100%;
   }
+	.navbar-logo {
+		display: none;
+	}
 	#navbarSupportedContent ul li a{
 		padding: 12px 30px;
 	}
@@ -291,13 +308,16 @@ ul.dropdown {
   .logo-bar .text-div {
     text-align: center;
   }
-	.section-background + h1 {
-		font-weight: 400;
-		font-size: 2rem;
+	.section-background h1 {
+		font-weight: 600;
+		font-size: 40px;
 		left: 20%;
 		top: 30%;
 		margin-top: 10px;
 		margin-bottom: 10px;
+	}
+	.dropdown-el {
+		font-size: 20px !important;
 	}
 }
 
@@ -310,13 +330,20 @@ ul.dropdown {
     max-width: 200px;
     flex-grow: 1;
   }
-	.section-background + h1 {
-		font-weight: 200;
-		font-size: 1.5rem;
+	.section-background h1 {
+		font-weight: 300;
+		font-size: 30px;
 		left: 15%;
 		top: 20%;
 		margin-top: 5px;
 		margin-bottom: 5px;
+	}
+	.dropdown-el {
+		font-size: 18px !important;
+	}
+	.section-background div {
+		position: unset;
+		margin: auto;
 	}
 }
 
@@ -329,7 +356,7 @@ ul.dropdown {
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
-  height: 65vh;
+  height: 100vh;
   width: 100%;
   color: #FFFFFF;
   display: flex;
@@ -338,43 +365,137 @@ ul.dropdown {
 }
 
 .parallax1 {
-	background-image: url("../img/Gif1.gif");
-	opacity: .8;
+	background-image: url("../img/model3.PNG");
+	/* opacity: .8;
 	-webkit-filter: blur(12px);
 	-moz-filter: blur(12px);
 	-o-filter: blur(12px);
 	-ms-filter: blur(12px);
-	filter: blur(12px);
+	filter: blur(12px); */
 }
 
 .parallax2 {
   background-image: url("../img/car.jpeg");
-	opacity: .8;
+	/* opacity: .8;
 	-webkit-filter: blur(12px);
 	-moz-filter: blur(12px);
 	-o-filter: blur(12px);
 	-ms-filter: blur(12px);
-	filter: blur(12px);
+	filter: blur(12px); */
 }
 
 .parallax3 {
-  background-image: url("../img/Gif1.gif");
-	opacity: .8;
+  background-image: url("../img/modelY.PNG");
+	/* opacity: .8;
 	-webkit-filter: blur(12px);
 	-moz-filter: blur(12px);
 	-o-filter: blur(12px);
 	-ms-filter: blur(12px);
-	filter: blur(12px);
+	filter: blur(12px); */
 }
 
 .parallax4 {
   background-image: url("../img/car.jpeg");
-	opacity: .8;
+	/* opacity: .8;
 	-webkit-filter: blur(12px);
 	-moz-filter: blur(12px);
 	-o-filter: blur(12px);
 	-ms-filter: blur(12px);
-	filter: blur(12px);
+	filter: blur(12px); */
 }
 
 /* End Parallax CSS */
+
+
+/* Start Select CSS */
+
+.dropdown-el {
+	font-size: 24px;
+	width: 95%;
+	box-shadow: inset 0 -3em 3em rgba(255, 255, 255, .6), 0 0 0 2px rgb(255, 255, 255),
+    0.3em 0.3em 1em rgba(255, 255, 255, .8);
+	margin-left: 5px;
+	margin-right: 5px;
+  position: relative;
+  display: inline-block;
+  min-height: 2em;
+  max-height: 2em;
+  overflow: hidden;
+  cursor: pointer;
+  text-align: left;
+  white-space: nowrap;
+  color: #444;
+  outline: none;
+  border: 0.06em solid transparent;
+  border-radius: 1em;
+  background-color: #cde4f5;
+  transition: 0.3s all ease-in-out;
+}
+.dropdown-el input:focus + label {
+  background: #def;
+}
+.dropdown-el input {
+  width: 1px;
+  height: 1px;
+  display: inline-block;
+  position: absolute;
+  opacity: 0.01;
+}
+.dropdown-el label {
+  border-top: 0.06em solid #d9d9d9;
+  display: block;
+  height: 2em;
+  line-height: 2em;
+  padding-left: 1em;
+  padding-right: 3em;
+  cursor: pointer;
+  position: relative;
+  transition: 0.3s color ease-in-out;
+}
+.dropdown-el label:nth-child(2) {
+  margin-top: 2em;
+  border-top: 0.06em solid #d9d9d9;
+}
+.dropdown-el input:checked + label {
+  display: block;
+  border-top: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.dropdown-el input:checked + label:nth-child(2) {
+  margin-top: 0;
+  position: relative;
+}
+.dropdown-el::after {
+  content: "";
+  position: absolute;
+  right: 0.8em;
+  top: 0.9em;
+  border: 0.3em solid #3694d7;
+  border-color: #3694d7 transparent transparent transparent;
+  transition: 0.4s all ease-in-out;
+}
+.dropdown-el.expanded {
+  border: 0.06em solid #3694d7;
+  background: #fff;
+  border-radius: 0.25em;
+  padding: 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 3px 3px 5px 0px;
+  max-height: 15em;
+}
+.dropdown-el.expanded label {
+  border-top: 0.06em solid #d9d9d9;
+}
+.dropdown-el.expanded label:hover {
+  color: #3694d7;
+}
+.dropdown-el.expanded input:checked + label {
+  color: #3694d7;
+}
+.dropdown-el.expanded::after {
+  transform: rotate(-540deg);
+  top: 0.55em;
+}
+
+/* End Select */
